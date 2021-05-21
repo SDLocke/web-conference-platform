@@ -1,4 +1,4 @@
-const host_server = "www.madaochenggong.xyz/";
+const host_server = "";
 const clipboardObj = navigator.clipboard;
 var owner_id;
 var owner_name;

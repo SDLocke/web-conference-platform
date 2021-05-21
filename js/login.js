@@ -1,4 +1,4 @@
-const host_server = "www.madaochenggong.xyz/";
+const host_server = "";
 
 function send_test() {
     //创建url

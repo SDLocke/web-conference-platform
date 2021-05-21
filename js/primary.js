@@ -1,4 +1,4 @@
-const host_server = "www.madaochenggong.xyz/";
+const host_server = "";
 
 function load() {
     var auth = localStorage.getItem("myAuthorization");

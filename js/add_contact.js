@@ -1,4 +1,4 @@
-const host_server = "www.madaochenggong.xyz/";
+const host_server = "";
 var user_list = new Map();
 var designated_participants_list = new Set();
 
