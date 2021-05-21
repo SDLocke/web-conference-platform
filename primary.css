@@ -1,0 +1,128 @@
+body,
+ul {
+    margin: 0;
+    padding: 0;
+    font-family: 'Microsoft YaHei';
+    font-size: 13px;
+    color: #676A6C;
+}
+
+
+/*侧边导航栏样式*/
+
+.auth_siderbar {
+    background: #2f4050;
+    position: absolute;
+    width: 220px;
+    top: 0px;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.auth_logo {
+    /* margin-top: 10px;
+    margin-bottom: 14px; */
+    margin: 10px;
+}
+
+.auth_username {
+    height: 53px;
+    line-height: 53px;
+    text-align: center;
+}
+
+.auth_username span {
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.auth_nav ul {
+    width: 220px;
+    font-size: 12px;
+}
+
+.auth_nav ul>li {
+    position: relative;
+    display: block;
+}
+
+.auth_nav ul>li.active {
+    background: #293846
+}
+
+.auth_nav ul>li.active>a,
+.auth_nav ul>li.active>a:hover {
+    color: #fff;
+    border-left-color: #19aa8d;
+}
+
+.auth_nav ul>li>a {
+    position: relative;
+    display: block;
+    color: #a7b1c2;
+    font-weight: 600;
+    padding: 14px 20px 14px 25px;
+    text-decoration: none;
+    border-left: 4px solid transparent;
+}
+
+.auth_nav ul>li>a:hover {
+    color: white;
+    background: #293846;
+    border-left-color: #293846;
+}
+
+.auth_nav ul>li>a i {
+    margin-right: 6px;
+}
+
+.nav_icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    float: left;
+}
+
+
+/*内容样式*/
+
+.auth_content {
+    margin-left: 220px;
+    background-color: #f3f3f4;
+}
+
+.auth_content .auth_sheet {
+    border: none;
+    width: 100%;
+    height: 560px;
+}
+
+.auth_content .auth_toolbar {
+    line-height: 60px;
+    height: 60px;
+    position: relative;
+}
+
+.auth_content .auth_toolbar a {
+    text-decoration: none;
+    float: right;
+    margin-right: 20px;
+}
+
+.auth_content .auth_toolbar a i {
+    margin-right: 10px;
+}
+
+.auth_content .auth_toolbar a span {
+    color: #999c9e;
+    font-size: 14px;
+}
+
+.auth_content .auth_footer {
+    border-top: 1px solid #e7eaec;
+    padding: 10px 20px;
+}
+
+.pull-right {
+    float: right;
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>主页</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-1.10.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+    <script src="layer/layer.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <script src="js/homepage.js"></script>
+    <link href="homepage.css" rel="stylesheet">
+
+</head>
+
+<body onload="load()">
+    <div class="container" style="margin: 0px;padding: 0px;">
+        <div class="row clearfix">
+            <!--侧边栏-->
+            <div class="col-md-1 column">
+                <div class="mysidebar">
+                    <nav id="sidebar">
+                        <div class="goneng">
+                            <button id="contact_btn" title="通讯录" value="hide" onclick="show_mycontact()">
+                                <img loading="lazy" src="image\contect.png" alt="无法载入图像" width="45" height="45"></img>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+
+            <!--导航栏-->
+            <div class="mynavbar">
+                <div class="col-md-12 column" style="margin: 0;padding: 0;">
+                    <nav class="navbar navbar-default" role="navigation">
+
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">LOGO</a>
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <a href="#会议首页" data-toggle="tab">首页</a>
+                                </li>
+                                <li>
+                                    <a href="#社区中心" data-toggle="tab" onclick="get_share_meeting()">社区</a>
+                                </li>
+                            </ul>
+                            <!--搜索框-->
+                            <form class="navbar-form navbar-left" role="search">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" />
+                                </div> <button type="submit" class="btn btn-default">搜索</button>
+                            </form>
+                            <!--用户中心-->
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <img id="avatar" alt="头像" class="img-squre" src="image\Default_avatar.png" width="50px" height="50px" />
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <span id="username" style="color: black;font-size: 15px">请登录</span>
+                                        <strong class="caret"></strong>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li>
+                                            <a href="primary.html">个人中心</a>
+                                        </li>
+                                        <li class="divider">
+                                        </li>
+                                        <li>
+                                            <a href="login.html">退出登录</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav>
+
+                </div>
+            </div>
+            <!--内容-->
+            <div class="mycontent">
+
+                <!--通讯录-->
+                <div class="mycontact" id="mycontact">
+                    <iframe scrolling="auto" src="contact.html" width="400px" height="450" frameborder="0"></iframe>
+                </div>
+                <!--标签页具体内容-->
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="会议首页">
+                        <div id="magicalDragScene" class="mc-root mc-ui-absolute-pane">
+                            <button id="" onclick="join_meeting()" class="btn btn-default btn-info" style="position: absolute; left: 62%; top: 25%; width: 8%; height: 50px;" type="button">加入会议</button>
+                            <input id="meet_id" class="form-control" style="position: absolute; left: 30%; top: 25%; width: 30%; height: 50px;" type="text" placeholder="请输入会议号" />
+                            <input id="meet_name" onblur="show_meet_name()" class="form-control" style="position: absolute; left: 30%; top: 50%; width: 30%; height: 50px;" type="text" placeholder="请输入会议名" />
+                            <button id="" class="btn btn-default btn-info" style="width: 8%; height: 50px; position: absolute; left: 62%; top: 50%;" type="button" data-toggle="modal" data-target="#myModal">创建会议</button>
+                        </div>
+                        <!-- 模态框（Modal） -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="myModalLabel">创建会议</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- <p>会议号：<span id="show_meet_id">16546849821</span></p> -->
+                                        <p>会议名：<span id="show_meet_name" style="color: red;">请输入会议名</span></p>
+                                        <!-- <p>会议链接：
+                                            <a href="http://www.w3school.com.cn">http://www.w3school.com.cn</a>
+                                        </p> -->
+                                        <!--会议持续时间-->
+                                        <span>会议持续时间：</span>
+                                        <select id="duration" name="duration">
+                                            <option value="0.5">30分钟</option>
+                                            <option value="1">1小时</option>
+                                            <option value="1.5">1.5小时</option>
+                                            <option value="2">2小时</option>
+                                            <option value="3">3小时</option>
+                                            <option value="4">4小时</option>
+                                            <option value="5">5小时</option>
+                                            <option value="6">6小时</option>
+                                        </select><br/><br/>
+                                        <div>
+                                            <label for="public">推广会议</label>
+                                            <input type="radio" name="choose" toggle id="public" onclick="secret_check()">
+                                            <span style="color: lightgrey;">&nbsp&nbsp&nbsp&nbsp&nbsp将在会议社区中展示，允许所有人进入</span>
+                                            <br>
+                                            <label for="secret">保密会议</label>
+                                            <input type="radio" name="choose" toggle id="secret" onclick="secret_check()">
+                                            <span style="color: lightgrey;">&nbsp&nbsp&nbsp&nbsp&nbsp不会在会议社区中展示，只允许设置的与会者进入</span><br>
+                                            <label for="common">普通会议</label>
+                                            <input type="radio" checked name="choose" toggle id="common" onclick="secret_check()">
+                                            <span style="color: lightgrey;">&nbsp&nbsp&nbsp&nbsp&nbsp不会在会议社区中展示，允许所有人进入</span>
+                                        </div>
+                                        <div id="adding">
+                                            <div class="add_contact" id="add_contact">
+                                                <iframe id="invite_frame" name="invite_frame" scrolling="auto" src="add_contact.html" width="580px" height="300px" frameborder="0"></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <center>
+                                            <button type="button" class="btn btn-default" data-dismiss="modal" onclick="cancel_create()">关闭</button>
+                                            <button type="button" class="btn btn-primary" onclick="create_meet()">确定</button>
+                                        </center>
+                                    </div>
+                                </div>
+                                <!-- /.modal-content -->
+                            </div>
+                            <!-- /.modal -->
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="社区中心">
+                        <h2 style="text-align:center">推广会议社区</h2>
+                        <div id="community">
+                            <!-- <div class="responsive">
+                            <div class="img">
+                                <a target="_blank" href="#">
+                                    <img src="image/1.png" alt="Trolltunga Norway" width="250px" height="140px">
+                                </a>
+                                <div class="desc">C语言分享会</div>
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="img">
+                                <a target="_blank" href="#">
+                                    <img src="image/2.jpg" alt="Forest" width="250px" height="140px">
+                                </a>
+                                <div class="desc">js分享</div>
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="img">
+                                <a target="_blank" href="#">
+                                    <img src="image/3.png" alt="Northern Lights" width="250px" height="140px">
+                                </a>
+                                <div class="desc">python分享</div>
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="img">
+                                <a target="_blank" href="#">
+                                    <img src="image/4.jpg" alt="Mountains" width="250px" height="140px">
+                                </a>
+                                <div class="desc">前端布局</div>
+                            </div>
+                        </div>
+                        <div class="responsive">
+                            <div class="img">
+                                <a target="_blank" href="#">
+                                    <img src="image/5.jpg" alt="Mountains" width="250px" height="140px">
+                                </a>
+                                <div class="desc">后端设计</div>
+                            </div>
+                        </div> -->
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background: #fff url(image/background2.png) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.dowebok {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 430px;
+    height: 550px;
+    margin: -300px 0 0 -215px;
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.regdowebok {
+    position: absolute;
+    left: 50%;
+    top: 47.5%;
+    width: 430px;
+    height: 630px;
+    margin: -300px 0 0 -215px;
+    border: 1px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.logo {
+    width: 104px;
+    height: 104px;
+    margin: 50px auto 80px;
+    background: url(image/login.png) 0 0 no-repeat;
+}
+
+.form-item {
+    position: relative;
+    width: 360px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.form-item input {
+    width: 288px;
+    height: 48px;
+    padding-left: 70px;
+    border: 1px solid rgb(17, 17, 17);
+    border-radius: 25px;
+    font-size: 18px;
+    color: black;
+    background-color: transparent;
+    outline: none;
+}
+
+.form-item button {
+    width: 360px;
+    height: 50px;
+    border: 0;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #1f6f4a;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
+}
+
+#username {
+    background: url(image/emil.png) 20px 14px no-repeat;
+}
+
+#mail {
+    background: url(image/emil.png) 20px 14px no-repeat;
+}
+
+#password {
+    background: url(image/password.png) 23px 11px no-repeat;
+}
+
+#password_again {
+    background: url(image/password.png) 23px 11px no-repeat;
+}
+
+.check {
+    position: absolute;
+    left: 20px;
+    top: 52px;
+    font-size: 14px;
+}
+
+.tip {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 52px;
+    font-size: 14px;
+    color: #f50;
+}
+
+.reg-bar {
+    width: 360px;
+    margin: 20px auto 0;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+.reg-bar a {
+    color: rgb(17, 17, 17);
+    text-decoration: none;
+}
+
+.reg-bar a:hover {
+    text-decoration: underline;
+}
+
+.reg-bar .reg {
+    float: left;
+}
+
+.reg-bar .forget {
+    float: right;
+}
+
+.dowebok ::-webkit-input-placeholder {
+    font-size: 18px;
+    line-height: 1.4;
+    color: lightslategray;
+}
+
+.dowebok :-moz-placeholder {
+    font-size: 18px;
+    line-height: 1.4;
+    color: lightslategray;
+}
+
+.dowebok ::-moz-placeholder {
+    font-size: 18px;
+    line-height: 1.4;
+    color: lightslategray;
+}
+
+.dowebok :-ms-input-placeholder {
+    font-size: 18px;
+    line-height: 1.4;
+    color: lightslategray;
+}
+
+@media screen and (max-width: 500px) {
+    * {
+        box-sizing: border-box;
+    }
+    .dowebok {
+        position: static;
+        width: auto;
+        height: auto;
+        margin: 0 30px;
+        border: 0;
+        border-radius: 0;
+    }
+    .logo {
+        margin: 50px auto;
+    }
+    .form-item {
+        width: auto;
+    }
+    .form-item input,
+    .form-item button,
+    .reg-bar {
+        width: 100%;
+    }
+}
+
+.button {
+    background-color: #4CAF50;
+    /* Green */
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}

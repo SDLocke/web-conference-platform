@@ -1,0 +1,118 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100%;
+    background: rgb(187, 187, 187) url(image/background2.png) 50% 50% no-repeat;
+    background-size: cover;
+}
+
+.goneng {
+    display: table-cell;
+    vertical-align: middle;
+    height: 550px;
+}
+
+.goneng button {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px;
+}
+
+.goneng img {
+    vertical-align: middle;
+}
+
+div.img {
+    border: 1px solid #ccc;
+}
+
+div.img:hover {
+    border: 1px solid #777;
+}
+
+div.img img {
+    width: 100%;
+    /* height: auto; */
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.responsive {
+    padding: 10px 10px;
+    float: left;
+    width: 20%;
+}
+
+@media only screen and (max-width: 700px) {
+    .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .responsive {
+        width: 100%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.mynavbar {
+    margin: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.mysidebar {
+    background: lightgray;
+    padding: 0;
+    position: absolute;
+    top: 52px;
+    bottom: 0;
+    width: 70px;
+}
+
+.mycontent {
+    position: absolute;
+    top: 52px;
+    right: 0;
+    left: 60px;
+    bottom: 0;
+    overflow: scroll;
+}
+
+
+/*通讯录块*/
+
+.mycontact {
+    position: fixed;
+    left: 60px;
+    top: 150px;
+    display: none;
+}
+
+#myModalLabel {
+    text-align: center;
+}
+
+#adding {
+    display: none;
+}
+
+
+/* .mymodal_info {} */

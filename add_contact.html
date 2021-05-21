@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>添加与会者</title>
+    <script src="js/jquery-1.10.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://lowcode.magicalcoder.com/magicalcoder/assets/drag/ui/magicalcoder/1.1.0/magicalcoder.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.3/json3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+
+    <script src="js/add_contact.js"></script>
+
+</head>
+
+<body onload="load_invite_list()">
+    <div id="magicalDragScene" class="mc-root mc-ui-absolute-pane">
+        <ul class="list-group mb-3" style="position: absolute; left: 0%; top: 0%; width: 100%; height: 600px;">
+            <li class="list-group-item d-flex justify-content-between">
+                <div class="input-group mb-3">
+                    <input class="form-control" type="text" placeholder="请输入联系人" />
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">搜索</button>
+                    </div>
+                </div>
+            </li>
+            <div id="contact_list_invite">
+                <!-- <li class="list-group-item d-flex justify-content-between">
+                    <div style="width: 90%;">
+                        <h6 class="my-0">围城</h6>
+                        <small class="text-muted">里面的人想出去，外面的人想进来</small>
+                    </div>
+                    <button style="width: 10%;" class="btn btn-info" type="button" onclick="Invite(this)" data-clicked="0">邀请</button>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                    <div style="width: 90%;">
+                        <h6 class="my-0">不知道取什么名字</h6>
+                        <small class="text-muted">太懒了不想写签名</small>
+                    </div>
+                    <button style="width: 10%;" class="btn btn-info" type="button" onclick="Invite(this)" data-clicked="0">邀请</button>
+                </li> -->
+            </div>
+        </ul>
+    </div>
+
+</body>
+
+</html>
