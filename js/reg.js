@@ -1,4 +1,4 @@
-const host_server = "http://10.201.98.79:8000/";
+const host_server = "www.madaochenggong.xyz/";
 
 function isEmail() {
     var email = document.getElementById("mail").value;

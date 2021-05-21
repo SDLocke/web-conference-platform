@@ -1,4 +1,4 @@
-const host_server = "http://10.201.98.79:8000/";
+const host_server = "www.madaochenggong.xyz/";
 let api;
 var meet_id_str = window.location.search;
 var meet_id = meet_id_str.split("=")[1];
