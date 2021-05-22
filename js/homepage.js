@@ -105,7 +105,7 @@ function create_meet() {
                 title: '创建会议成功！',
                 content: "会议ID：" + response.meeting_id + "<br/>会议名：" + response.name + "<br/>会议链接：" + window.location.host + "/jitsi.html?ID=" + response.meeting_id,
                 // closeBtn: 0,
-                btn: ['确认', '复制ID'],
+                btn: ['确认', '复制'],
                 yes: function(index, layero) {
                     sessionStorage.setItem("meet_name", response.name);
                     sessionStorage.setItem("meet_type", response.meeting_type);
@@ -203,14 +203,14 @@ function generate_share_meeting(share_meeting_list) {
 }
 
 function create_list_share(share_meeting_info) {
-    var head = '<div class="responsive"><div class="img"><a target="_blank" onclick="share_join(' + share_meeting_info.id + ')"><img src="image/1.png" alt="Trolltunga Norway" width="250px" height="140px"></a>'
+    var head = '<div class="responsive"><div class="img"><a target="_blank" onclick="share_join(this)" data-id="' + share_meeting_info.meeting_id + '"><img src="image/1.png" alt="Trolltunga Norway" width="250px" height="140px"></a>'
     var body = '<div class="desc">' + share_meeting_info.name + '</div></div></div>'
     return head + body;
 }
 
-function share_join(id) {
+function share_join(me) {
     var auth = localStorage.getItem("myAuthorization");
-
+    var id = me.getAttribute('data-id');
     $.ajax({
         async: false,
         cache: false,
@@ -225,7 +225,7 @@ function share_join(id) {
         success: function(response) {
             sessionStorage.setItem("meet_name", response.name);
             sessionStorage.setItem("meet_type", response.meeting_type);
-            location.href = "test.html";
+            window.open("jitsi.html?ID=" + id);
         },
         error: function(response) {
             var error_info = JSON.parse(response.responseText);
